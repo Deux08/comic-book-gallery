@@ -11,7 +11,8 @@
     @foreach (var comicBook in Model)
     {
         <div class="col-md-3">
-            <h4>@comicBook.DisplayText</h4>
+            <h4>@Html.ActionLink(comicBook.DisplayText, "Detail", new { id = comicBook.Id})</h4>
+            <a href="@Url.Action("Detail",  new { id = comicBook.Id})"></a>
             <img src="/Images/the-amazing-spider-man-700.jpg"
                  alt="@comicBook.DisplayText"
                  class="img-responsive" />
